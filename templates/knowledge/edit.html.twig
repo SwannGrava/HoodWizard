@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Knowledge{% endblock %}
+
+{% block body %}
+    <h1>Edit Knowledge</h1>
+
+    {{ include('knowledge/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_knowledge_index') }}">back to list</a>
+
+    {{ include('knowledge/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Knowledge index{% endblock %}
+
+{% block body %}
+    <h1>Knowledge index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Content</th>
+                <th>State</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for knowledge in knowledge %}
+            <tr>
+                <td>{{ knowledge.id }}</td>
+                <td>{{ knowledge.title }}</td>
+                <td>{{ knowledge.description }}</td>
+                <td>{{ knowledge.content }}</td>
+                <td>{{ knowledge.state.value }}</td>
+                <td>
+                <form>
+  <fieldset class="starability-slot">
+    <legend>Note cette connaissance :</legend>  
+
+    <input type="radio" id="rate5" name="rating" value="5" />
+    <label for="rate5" title="Excellent">5 étoiles</label>
+
+    <input type="radio" id="rate4" name="rating" value="4" />
+    <label for="rate4" title="Très bien">4 étoiles</label>
+
+    <input type="radio" id="rate3" name="rating" value="3" checked/>
+    <label for="rate3" title="Bien">3 étoiles</label>
+
+    <input type="radio" id="rate2" name="rating" value="2" />
+    <label for="rate2" title="Bof">2 étoiles</label>
+
+    <input type="radio" id="rate1" name="rating" value="1" />
+    <label for="rate1" title="Nul">1 étoile</label>
+  </fieldset>
+</form>
+
+                <td>
+                    <a href="{{ path('app_knowledge_show', {'id': knowledge.id}) }}">show</a>
+                    <a href="{{ path('app_knowledge_edit', {'id': knowledge.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_knowledge_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Knowledge{% endblock %}
+
+{% block body %}
+    <h1>Create new Knowledge</h1>
+
+    {{ include('knowledge/_form.html.twig') }}
+
+    <a href="{{ path('app_knowledge_index') }}">back to list</a>
+{% endblock %}

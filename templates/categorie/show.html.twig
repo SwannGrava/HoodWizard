@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categorie{% endblock %}
+
+{% block body %}
+    <h1>Categorie yes</h1>
+
+    <table class="card-knowledge">
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <td>{{ categorie.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ categorie.description }}</td>
+                <a href="{{ path('app_knowledge_categorie',{'id': categorie.id}) }}" class="btn btn-primary">Voir toutes les connaissances</a>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="" href="{{ path('app_categorie_index') }}">back to list</a>
+{# <a href="{{ path('app_knowledge_show', {'id': knowledge.id}) }}" class="btn btn-primary">Voir la connaissance</a> #}
+
+    <a href="{{ path('app_categorie_edit', {'id': categorie.id}) }}">edit</a>
+
+    {{ include('categorie/_delete_form.html.twig') }}
+{% endblock %}

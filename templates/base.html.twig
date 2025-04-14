@@ -4,6 +4,16 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        {# css pour star notation #}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/starability/2.4.2/starability-minified/starability-all.min.css" integrity="sha512-k5K++9rI+aOPWZB9NxhNQD3SNa1OQhu+XDyPtbBBXABkcW12Ts+i7LNqIHhfK0sXpXbkhj8fyDHMc3so+SKYAA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        {# CDN gg font Mystery Quest #}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap" rel="stylesheet">
+        
+        {# css LA DECO HAUT DESSUS DAMIT !!!!!! #}
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        
         {% block stylesheets %}
         {% endblock %}
 
@@ -12,6 +22,30 @@
         {% endblock %}
     </head>
     <body>
+    {% block navbar %}
+    <div class="logo-header">
+     <!-- Logo animé -->
+        <img src="/image/hatgif.gif" alt="Logo HoodWizard" class="logo-gif">
+    <h1 class="neon-text" >HoodWizard</h1>
+    </div>
+<!-- Navbar -->
+<div class="navbar">
+    <div class="left">
+        
+        <!-- Bouton Accueil -->
+        <a href="{{ path('app_home') }}">Accueil</a>
+        <!-- Bouton Catégories -->
+        <a href="{{ path('app_categorie_index') }}">Catégories</a>
+    </div>
+    <div class="right">
+        <!-- Bouton Inscription utilisateur -->
+
+        
+       
+    </div>
+</div>
+{% endblock %}
+
         {% block body %}{% endblock %}
     </body>
 </html>

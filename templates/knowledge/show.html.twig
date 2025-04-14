@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Knowledge{% endblock %}
+
+{% block body %}
+    <h1>Knowledge</h1>
+
+    <div class="card-knowledge">
+        <table>
+            <tr>
+                <th>Id</th>
+                <td>{{ knowledge.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ knowledge.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ knowledge.description }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ knowledge.content }}</td>
+            </tr>
+            <tr>
+                <th>État</th>
+                <td>{{ knowledge.state.value }}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <a class="btn-neon" href="{{ path('app_knowledge_index') }}">back to list</a>
+
+    <a class="btn-neon-inverse" href="{{ path('app_knowledge_edit', {'id': knowledge.id}) }}">edit</a>
+
+    {{ include('knowledge/_delete_form.html.twig') }}
+{% endblock %}

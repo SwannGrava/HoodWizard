@@ -1,0 +1,230 @@
+/* Global Body */
+body {
+    background-image: url('/image/neon bar.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* background: radial-gradient(circle at center, #0f0f1e, #040410); /* Garde le gradient comme arrière-plan de secours */
+    /* color: #00ffff; */ 
+    font-family: "Mystery Quest", system-ui;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Neon Effect Titles */
+.neon-text, h1, h2, h3, h4 {
+    color: #00ffff;
+    text-shadow:
+        0 0 3px #00ffff,
+        0 0 6px #00c0c0,
+        0 0 10px #008080;
+    font-weight: bold;
+}
+
+/* Navbar HUD Style */
+.navbar {
+    width: 90%;
+    background: linear-gradient(90deg, #001f2f, #00394d);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 8px #00ffffaa;
+}
+
+.navbar a {
+    color: #00ffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    text-shadow: 0 0 5px #00ffff;
+    border: 1px solid #00ffff55;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #002830;
+    box-shadow: 0 0 8px #00ffff;
+    color: #ffffff;
+}
+
+/* Logo GIF */
+.logo-gif {
+    height:  100px;
+    width: auto;
+}
+
+/* Category Cards */
+.categories {
+    display: flex;
+    flex-wrap: wrap;  /* Permet de passer à la ligne suivante lorsque la ligne est remplie */
+    justify-content: space-between; /* Espacement égal entre les éléments */
+    gap: 20px;  /* Espacement entre chaque élément */
+}
+
+.category {
+    background: black;
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 200px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+    border: 1px solid #00ffff55;
+    transition: all 0.3s ease-in-out;
+}
+
+.category:hover {
+    background-color: #002830;
+    box-shadow: 0 0 8px #00ffff;
+}
+
+/* Cards Container */
+.cards {
+    background-color: #0f0f1f;
+    border: 2px solid #00ffff55;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Card Content */
+.card {
+    background: #2C3E50;
+    padding: 15px;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: #34495E;
+}
+
+/* Knowledge Cards HUD Look */
+.card-knowledge {
+    background-color: #1f1f1f;
+    border: 2px solid #00ffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2);
+    max-width: 300px;
+    color: #00ffff;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.card-knowledge:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 255, 255, 0.3);
+}
+
+.card-knowledge th {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 0;
+    color: #ffffff;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+.card-knowledge td {
+    padding: 5px 0;
+}
+
+/* Scanline overlay for retro effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.015),
+        rgba(255,255,255,0.015) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* les classe pour les 2 type bouton bébé ❤️🥵 */
+.btn-neon {
+    background-color: #002830;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    text-shadow: 0 0 5px #00ffff;
+    box-shadow: 0 0 10px #00ffffaa;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-neon:hover {
+    background-color: #00ffff;
+    color: #002830;
+    box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff88;
+}
+
+.btn-neon-inverse {
+    background-color: #00ffff;
+    color: #002830;
+    border: 2px solid #002830;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    text-shadow: 0 0 5px #002830;
+    box-shadow: 0 0 10px #00ffffaa;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-neon-inverse:hover {
+    background-color: #002830;
+    color: #00ffff;
+    box-shadow: 0 0 20px #002830, 0 0 30px #00ffff;
+}
+
+.btn-voir-connaissances {
+    display: inline-block;
+    background-color: #002830;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00ffff;
+    box-shadow: 0 0 10px #00ffffaa;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-voir-connaissances:hover {
+    background-color: #00ffff;
+    color: #002830;
+    box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff88;
+}

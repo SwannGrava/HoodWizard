@@ -1,0 +1,35 @@
+
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+
+
+<div class="container">
+    <h1>Dernières Connaissances</h1>
+        {# {{ dump(knowledges) }} #}
+    <div class="categories">
+        {% for categorie in categories %}
+            {# <div class="category">{{ categorie.name }} #}
+            <a class="category neon-text" href="{{ path('app_categorie_show', {'id': categorie.id}) }}">{{ categorie.name }}</a>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div class="cards">
+        {% if knowledges is empty %}
+            <p>Aucune connaissance ajoutée pour le moment.</p>
+        {% else %}
+            {% for knowledge in knowledges %}
+                <div class="card">
+                    <h3>{{ knowledge.title }}</h3>
+                    <p>{{ knowledge.description|slice(0, 50) }}...</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
