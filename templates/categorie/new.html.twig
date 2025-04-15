@@ -4,8 +4,9 @@
 
 {% block body %}
     <h1>Create new Categorie</h1>
-
+<div class="card-knowledge">
     {{ include('categorie/_form.html.twig') }}
+</div>
+    <a class="btn-neon" href="{{ path('app_categorie_index') }}">retour a la list</a>
 
-    <a href="{{ path('app_categorie_index') }}">back to list</a>
 {% endblock %}

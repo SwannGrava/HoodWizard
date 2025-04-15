@@ -24,6 +24,16 @@ body {
     font-weight: bold;
 }
 
+.neon-minitxt {
+    color: #00ffff;
+    text-shadow:
+        0 0 3px #00ffff,
+        0 0 6px #00c0c0,
+        0 0 10px #008080;
+    font-weight: bold;
+}
+
+
 /* Navbar HUD Style */
 .navbar {
     width: 90%;
@@ -146,7 +156,7 @@ body {
     padding: 5px 0;
 }
 
-/* Scanline overlay for retro effect */
+/* Scanline overlay pour retro effect */
 body::before {
     content: '';
     position: fixed;
